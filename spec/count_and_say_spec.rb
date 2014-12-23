@@ -2,7 +2,7 @@ require 'spec_helper'
 require './lib/count_and_say'
 
 describe CountAndSay do
-  context '#sequence' do
+  context '.sequence' do
     it 'returns 1 for for 1' do
       expect(CountAndSay.sequence(1)).to eq(11)
     end
@@ -16,7 +16,7 @@ describe CountAndSay do
     end
   end
 
-  context '#sequence_at' do
+  context '.sequence_at' do
     context 'seed of 1' do
       it 'returns 1 for sequence 1 of seed 1' do
         expect(CountAndSay.sequence_at(1, 1)).to eq(1)
@@ -46,7 +46,7 @@ describe CountAndSay do
     end
   end
 
-  context '#group_digits' do
+  context '.group_digits' do
     it 'returns an array of grouped digits in arrays' do
       digits = %w(1 1 2 3 3 1)
       groups = [%w(1 1), ['2'], %w(3 3), ['1']]
@@ -54,7 +54,7 @@ describe CountAndSay do
     end
   end
 
-  context '#count_digit_groups' do
+  context '.count_digit_groups' do
     it 'returns an integer containing all group numbers' do
       groups = [%w(1 1), ['2'], %w(3 3), ['1']]
       expect(CountAndSay.format(groups)).to eq(21_122_311)
